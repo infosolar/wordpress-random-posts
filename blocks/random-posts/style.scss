@@ -1,0 +1,81 @@
+.random-posts {
+  background-color: #111;
+  margin: 0 -16px;
+
+  @media screen and (min-width: 1200px) {
+    margin: 0;
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1305px;
+    margin: 0 auto;
+    padding: 22px 16px 20px;
+
+    @media screen and (min-width: 768px) {
+      padding: 22px 16px 20px;
+    }
+
+    @media screen and (min-width: 1360px) {
+      padding: 22px 0 20px;
+    }
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-right: 25px;
+    color: white;
+  }
+
+  &__controls {
+    button {
+      -webkit-appearance: none;
+      outline: 0;
+      border: none;
+      background-color: transparent;
+      padding: 5px;
+      width: 30px;
+      cursor: pointer;
+      opacity: 0.2;
+      font-size: 0;
+      line-height: 0;
+      transition: opacity 0.3s ease-in-out;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &.loading {
+        pointer-events: none;
+        opacity: 1;
+        animation: spin 1s linear infinite;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    .new-card-rectangle {
+      @media screen and (max-width: 991px) {
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
